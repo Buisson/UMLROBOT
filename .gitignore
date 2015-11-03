@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+#other
+*~
+
+#executable
+main
