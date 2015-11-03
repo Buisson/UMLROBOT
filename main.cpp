@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include "Etat.h"
+
 using namespace std;
 
 int main(){
