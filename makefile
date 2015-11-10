@@ -16,5 +16,8 @@ Position : Position.o
 Plot : Plot.o
 	$(CXX_LINK) -o Plot Plot.o
 
+Objet : Objet.o
+	$(CXX_LINK) -o Objet Objet.o
+
 extra_all:
 
