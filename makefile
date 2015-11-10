@@ -10,3 +10,11 @@ main : main.o
 Etat : Etat.o
 	$(CXX_LINK) -o Etat Etat.o
 
+Position : Position.o
+	$(CXX_LINK) -o Position Position.o
+
+Plot : Plot.o
+	$(CXX_LINK) -o Plot Plot.o
+
+extra_all:
+

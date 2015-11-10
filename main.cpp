@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstdlib>
+using namespace std;
 #include "Etat.h"
+#include "Position.h"
+#include "Plot.h"
 
 using namespace std;
 
