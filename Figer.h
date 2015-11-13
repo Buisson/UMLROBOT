@@ -2,6 +2,7 @@
 
 class Figer : public Etat {
 	private:
+		Figer(){};
 		Etat _dernierEtat;
 		static Figer _instance;
 
