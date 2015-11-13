@@ -16,4 +16,4 @@ int main(){
 	Position p = Position(4,3);
 	cout << p.getx() << endl;
 	return 0;
-}
+}//
