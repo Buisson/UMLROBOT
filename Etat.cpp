@@ -1,4 +1,4 @@
-#include "Etat.h"
+#include "Etat.h"//
 
 Etat avancer(){
 	throw Etat::ImpossibleAction();
