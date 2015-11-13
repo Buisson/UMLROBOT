@@ -1,3 +1,5 @@
+#ifndef _ETAT_H_
+#define _ETAT_H_
 class Etat{
 	public:
 		class ImpossibleAction{};
@@ -11,3 +13,4 @@ class Etat{
 		virtual Etat& figer();
 		virtual Etat& repartir();
 };
+#endif
