@@ -1,12 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
-#include "Etat.h"
-#include "Position.h"
-#include "Plot.h"
-#include "Objet.h"
-
-using namespace std;
+#include "Robot.h"
 
 int main(){
 	cout << "##DEBUT TEST ROBOT UML##" << endl;
