@@ -1,30 +1,30 @@
 #include "Etat.h"//
 
-Etat& avancer(){
+Etat& Etat::avancer(){
 	throw Etat::ImpossibleAction();
 }
-Etat& tourner(){
+Etat& Etat::tourner(){
 	throw Etat::ImpossibleAction();
 }
-Etat& evaluerPlot(){
+Etat& Etat::evaluerPlot(){
 	throw Etat::ImpossibleAction();
 }
-Etat& saisir(){
+Etat& Etat::saisir(){
 	throw Etat::ImpossibleAction();
 }
-Etat& poser(){
+Etat& Etat::poser(){
 	throw Etat::ImpossibleAction();
 }
-Etat& peser(){
+Etat& Etat::peser(){
 	throw Etat::ImpossibleAction();
 }
-Etat& rencontrerPlot(){
+Etat& Etat::rencontrerPlot(){
 	throw Etat::ImpossibleAction();
 }
-Etat& figer(){
+Etat& Etat::figer(){
 	throw Etat::ImpossibleAction();
 }
-Etat& repartir(){
+Etat& Etat::repartir(){
 	throw Etat::ImpossibleAction();
 }
 Etat::~Etat(){}

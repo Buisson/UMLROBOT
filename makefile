@@ -1,14 +1,26 @@
-include default.mk
+CC = g++
+CFLAGS = -Wall
+EXEC_NAME = main
+INCLUDES =
+LIBS =
+OBJ_FILES = main.o Etat.o Figer.o Position.o Plot.o Objet.o Robot.o
 
+all : $(EXEC_NAME)
 
-INITIAL_FILES = main.cpp Etat.cpp Position.cpp Plot.cpp Objet.cpp Robot.cpp Figer.cpp
-ALL = main
+clean :
+	rm $(EXEC_NAME) $(OBJ_FILES)
 
-main : main.o Etat.o Position.o Plot.o Objet.o Robot.o Figer.o
-	$(CXX_LINK) -o main main.o
+$(EXEC_NAME) : $(OBJ_FILES)
+	$(CC) -o $(EXEC_NAME) $(OBJ_FILES) $(LIBS)
 
-#Position : Position.o
-	#$(CXX_LINK) -o Position Position.o
+%.o: %.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
-extra_all:
+%.o: %.cc
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
 
+%.o: %.c
+	gcc $(CFLAGS) $(INCLUDES) -o $@ -c $<
+
+install :
+	cp $(EXEC_NAME) $(INSTALL_DIR)
