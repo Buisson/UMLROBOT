@@ -1,10 +1,12 @@
+#include "Etat.h"
+
 class Figer : public Etat {
 	private:
-		Etat& dernierEtat;
-		static Figer& _instance = Figer();
+		Etat _dernierEtat;
+		static Figer _instance;
 
 	public:
-		Etat& figer();
+		Etat& figer(Etat currentState);
 		Etat& repartir();
-		static Etat& getInstance();
+		static Etat& getInstance() {return _instance;}
 };

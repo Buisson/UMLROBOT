@@ -1,13 +1,13 @@
 class Etat{
 	public:
 		class ImpossibleAction{};
-		Etat& avancer();
-		Etat& tourner();
-		Etat& evaluerPlot();
-		Etat& saisir();
-		Etat& poser();
-		Etat& peser();
-		Etat& rencontrerPlot();
-		Etat& figer();
-		Etat& repartir();
+		virtual Etat& avancer();
+		virtual Etat& tourner();
+		virtual Etat& evaluerPlot();
+		virtual Etat& saisir();
+		virtual Etat& poser();
+		virtual Etat& peser();
+		virtual Etat& rencontrerPlot();
+		virtual Etat& figer();
+		virtual Etat& repartir();
 };
