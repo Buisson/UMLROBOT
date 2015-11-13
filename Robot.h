@@ -15,6 +15,13 @@ class Robot{
 	public:
 		Robot(string d,Position po, Plot pl, Objet obj, Etat e);
 		void avancer(int x, int y);
-
+		void tourner(string direction);
+		void saisir(Objet o);
+		void poser();
+		int peser();
+		void rencontrerPlot(Plot p);
+		int evaluerPlot();
+		void figer();
+		void repartir();
 
 };
