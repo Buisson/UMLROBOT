@@ -1,3 +1,5 @@
+#ifndef _ROBOT_H_
+#define _ROBOT_H_
 using namespace std;
 #include <string>
 #include "Etat.h"
@@ -25,3 +27,4 @@ class Robot{
 		void repartir();
 
 };
+#endif

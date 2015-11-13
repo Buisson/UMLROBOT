@@ -2,7 +2,6 @@
 #define _ETAT_H_
 class Etat{
 	public:
-		class ImpossibleAction{};
 		virtual Etat& avancer();
 		virtual Etat& tourner();
 		virtual Etat& evaluerPlot();
@@ -12,5 +11,7 @@ class Etat{
 		virtual Etat& rencontrerPlot();
 		virtual Etat& figer();
 		virtual Etat& repartir();
+		virtual ~Etat();
+		class ImpossibleAction{};
 };
 #endif

@@ -27,3 +27,4 @@ Etat& figer(){
 Etat& repartir(){
 	throw Etat::ImpossibleAction();
 }
+Etat::~Etat(){}
