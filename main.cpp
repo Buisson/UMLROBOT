@@ -16,6 +16,10 @@ int main(){
 	Etat& f = AVideFacePlot::getInstance();
 	//string d,Position po, Plot pl, Objet objet, Etat e
 	Robot r = Robot("north",p,pl,o,f);
-	r.evaluerPlot();
+	cout << "evalPlot:" << endl;
+	r.evaluerPlot();//ne plante pas
+	cout << "fin eval plot" << endl;
+	cout << "repartir : " << endl;
+	r.repartir();//plante normalement
 	return 0;
 }//
