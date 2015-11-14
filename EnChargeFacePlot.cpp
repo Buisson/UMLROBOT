@@ -1,6 +1,5 @@
 #include "EnChargeFacePlot.h"
 #include "AVideFacePlot.h"
-
 EnChargeFacePlot* EnChargeFacePlot::_instance = NULL;
 
 Etat& EnChargeFacePlot::getInstance(){
