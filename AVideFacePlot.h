@@ -11,5 +11,6 @@ class AVideFacePlot : public EnRoute {
 		Etat& evaluerPlot();
 		Etat& tourner();
 		Etat& saisir();
+		string getName();
 };
 #endif

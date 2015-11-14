@@ -12,5 +12,6 @@ class EnChargeFacePlot : public EnRoute {
 		Etat& evaluerPlot();
 		Etat& tourner();
 		Etat& poser();
+		string getName();
 };
 #endif

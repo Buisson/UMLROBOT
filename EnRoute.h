@@ -9,5 +9,7 @@ class EnRoute : public Etat {
 		~EnRoute() {};
 	public:
 		Etat& figer();
+		virtual string getName()=0;
+
 };
 #endif

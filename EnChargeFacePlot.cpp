@@ -23,6 +23,12 @@ Etat& EnChargeFacePlot::tourner(){
 	return *this;
 }
 
+string EnChargeFacePlot::getName()
+{
+	return "EnChargeFacePlot";
+}
+
+
 Etat& EnChargeFacePlot::poser(){
 	return AVideFacePlot::getInstance();
 }

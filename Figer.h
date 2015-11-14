@@ -11,6 +11,7 @@ class Figer : public Etat {
 	public:
 		void setDernierEtat(Etat& dernierEtat);
 		Etat& repartir();
+		string getName();
 		static Etat& getInstance();
 		//Figer(Figer const&)               = delete;
         //void operator=(Figer const&)  = delete;

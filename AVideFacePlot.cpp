@@ -18,6 +18,10 @@ Etat& AVideFacePlot::tourner(){
 	return *this;
 }
 
+string AVideFacePlot::getName()
+{
+	return "AVideFacePlot";
+}
 
 Etat& AVideFacePlot::saisir(){
 	return EnChargeFacePlot::getInstance();

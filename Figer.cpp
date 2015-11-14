@@ -16,6 +16,11 @@ Etat& Figer::repartir()
 	return *_dernierEtat;
 }
 
+string Figer::getName()
+{
+	return "Figer";
+}
+
 void Figer::setDernierEtat(Etat& dernierEtat)
 {
 	this->_dernierEtat = &dernierEtat;

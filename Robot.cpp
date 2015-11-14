@@ -19,7 +19,7 @@ void Robot::tourner(string direction){
 	try{
 		etat = etat.tourner();
 		dir = direction;
-		plot = Plot(0);
+		plot = new Plot(0);
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -31,7 +31,7 @@ void Robot::tourner(string direction){
 void Robot::saisir(Objet o){
 	try{
 		etat = etat.saisir();
-		obj = o;
+		obj = &o;
 	} 
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -55,14 +55,14 @@ int Robot::peser(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}	
-	return obj.getPoids();
+	return obj->getPoids();
 }
 
 
 void Robot::rencontrerPlot(Plot p){
 	try{
 		etat = etat.rencontrerPlot();
-		plot = p;
+		plot = &p;
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -76,7 +76,7 @@ int Robot::evaluerPlot(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
-	return plot.getHauteur();
+	return plot->getHauteur();
 }
 
 void Robot::figer(){
