@@ -3,6 +3,7 @@
 using namespace std;
 #include "Robot.h"
 #include "Figer.h"
+#include "AVideFacePlot.h"
 
 int main(){
 	cout << "##DEBUT TEST ROBOT UML##" << endl;
@@ -12,8 +13,9 @@ int main(){
 	Position p = Position(4,3);
 	cout << p.getx() << endl;//
 	Plot pl = Plot(12);//
-	Etat& f = Figer::getInstance();
+	Etat& f = AVideFacePlot::getInstance();
 	//string d,Position po, Plot pl, Objet objet, Etat e
-	//Robot r = Robot("north",p,pl,o,f);
+	Robot r = Robot("north",p,pl,o,f);
+	r.evaluerPlot();
 	return 0;
 }//

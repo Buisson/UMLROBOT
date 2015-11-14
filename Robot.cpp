@@ -1,4 +1,7 @@
 #include "Robot.h"
+#include <iostream>
+#include <cstdlib>
+using namespace std;
 
 
 void Robot::avancer(int x, int y){
@@ -8,7 +11,7 @@ void Robot::avancer(int x, int y){
         pos.sety(y);
     }
     catch(Etat::ImpossibleAction e){
-
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
     }
 }
 
@@ -18,7 +21,7 @@ void Robot::tourner(string direction){
 		dir = direction;
 	}
 	catch(Etat::ImpossibleAction e){
-
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 }
 
@@ -30,7 +33,7 @@ void Robot::saisir(Objet o){
 		obj = o;
 	} 
 	catch(Etat::ImpossibleAction e){
-
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 }
 
@@ -40,7 +43,7 @@ void Robot::poser(){
 		obj = NULL;//TODO faire un truc plus propre
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 }
 
@@ -49,7 +52,7 @@ int Robot::peser(){
 		etat = etat.peser();
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}	
 	return obj.getPoids();
 }
@@ -61,7 +64,7 @@ void Robot::rencontrerPlot(Plot p){
 		plot = p;
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}		
 }
 
@@ -70,7 +73,7 @@ int Robot::evaluerPlot(){
 		etat = etat.evaluerPlot();
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 	return plot.getHauteur();
 }
@@ -80,7 +83,7 @@ void Robot::figer(){
 		etat = etat.figer();
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 }
 
@@ -89,7 +92,7 @@ void Robot::repartir(){
 		etat = etat.repartir();
 	}
 	catch(Etat::ImpossibleAction e){
-		
+		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
 }
 

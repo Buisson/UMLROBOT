@@ -4,7 +4,7 @@
 #include "Figer.h"
 #include <cstddef>
 class EnRoute : public Etat {
-	private:
+	protected:
 		EnRoute() {};
 		~EnRoute() {};
 	public:
