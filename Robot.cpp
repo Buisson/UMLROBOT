@@ -19,6 +19,7 @@ void Robot::tourner(string direction){
 	try{
 		etat = etat.tourner();
 		dir = direction;
+		plot = Plot(0);
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
