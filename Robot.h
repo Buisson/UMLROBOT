@@ -25,6 +25,7 @@ class Robot{
 		int evaluerPlot();
 		void figer();
 		void repartir();
+		void notify();
 
 };
 #endif
