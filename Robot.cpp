@@ -6,7 +6,7 @@ using namespace std;
 
 void Robot::avancer(int x, int y){
 	try{
-        etat = etat.avancer();
+        etat = &(etat->avancer());
         pos.setx(x);
         pos.sety(y);
     }
@@ -17,7 +17,7 @@ void Robot::avancer(int x, int y){
 
 void Robot::tourner(string direction){
 	try{
-		etat = etat.tourner();
+		etat = &(etat->tourner());
 		dir = direction;
 		plot = new Plot(0);
 	}
@@ -30,7 +30,7 @@ void Robot::tourner(string direction){
 /*Fonction saisir*/
 void Robot::saisir(Objet o){
 	try{
-		etat = etat.saisir();
+		etat = &(etat->saisir());
 		obj = &o;
 	} 
 	catch(Etat::ImpossibleAction e){
@@ -40,7 +40,7 @@ void Robot::saisir(Objet o){
 
 void Robot::poser(){
 	try{
-		etat = etat.poser();
+		etat = &(etat->poser());
 		obj = NULL;//TODO faire un truc plus propre
 	}
 	catch(Etat::ImpossibleAction e){
@@ -50,7 +50,7 @@ void Robot::poser(){
 
 int Robot::peser(){
 	try{
-		etat = etat.peser();
+		etat = &(etat->peser());
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -61,7 +61,7 @@ int Robot::peser(){
 
 void Robot::rencontrerPlot(Plot p){
 	try{
-		etat = etat.rencontrerPlot();
+		etat = &(etat->rencontrerPlot());
 		plot = &p;
 	}
 	catch(Etat::ImpossibleAction e){
@@ -71,7 +71,7 @@ void Robot::rencontrerPlot(Plot p){
 
 int Robot::evaluerPlot(){
 	try{
-		etat = etat.evaluerPlot();
+		etat = &(etat->evaluerPlot());
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -81,7 +81,7 @@ int Robot::evaluerPlot(){
 
 void Robot::figer(){
 	try{
-		etat = etat.figer();
+		etat = &(etat->figer());
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
@@ -90,7 +90,7 @@ void Robot::figer(){
 
 void Robot::repartir(){
 	try{
-		etat = etat.repartir();
+		etat = &(etat->repartir());
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
