@@ -3,7 +3,7 @@ CFLAGS = -Wall -std=c++11
 EXEC_NAME = main
 INCLUDES =
 LIBS =
-OBJ_FILES = main.o Etat.o Figer.o Position.o Plot.o Objet.o Robot.o EnRoute.o AVideFacePlot.o EnChargeFacePlot.o AVide.o EnCharge.o TexteDisplay.o
+OBJ_FILES = main.o Etat.o Figer.o Position.o Plot.o Objet.o Robot.o EnRoute.o AVideFacePlot.o EnChargeFacePlot.o AVide.o EnCharge.o Afficheur.o TexteDisplay.o
 
 all : $(EXEC_NAME)
 

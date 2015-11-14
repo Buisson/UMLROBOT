@@ -1,3 +1,4 @@
+#include <vector>
 #include "Robot.h"
 #include <iostream>
 #include <cstdlib>
@@ -13,6 +14,7 @@ void Robot::avancer(int x, int y){
     catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
     }
+	notify("avancer("+to_string(x)+","+to_string(y)+")");
 }
 
 void Robot::tourner(string direction){
@@ -24,11 +26,12 @@ void Robot::tourner(string direction){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("tourner("+direction+")");
 }
 
 
 /*Fonction saisir*/
-void Robot::saisir(Objet o){
+void Robot::saisir(Objet& o){
 	try{
 		etat = &(etat->saisir());
 		obj = &o;
@@ -36,16 +39,18 @@ void Robot::saisir(Objet o){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("saisir()");
 }
 
 void Robot::poser(){
 	try{
 		etat = &(etat->poser());
-		obj = NULL;//TODO faire un truc plus propre
+		obj = NULL;
 	}
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("poser()");
 }
 
 int Robot::peser(){
@@ -55,11 +60,12 @@ int Robot::peser(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}	
+	notify("peser()");
 	return obj->getPoids();
 }
 
 
-void Robot::rencontrerPlot(Plot p){
+void Robot::rencontrerPlot(Plot& p){
 	try{
 		etat = &(etat->rencontrerPlot());
 		plot = &p;
@@ -67,6 +73,7 @@ void Robot::rencontrerPlot(Plot p){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}		
+	notify("rencontrerPlot()");
 }
 
 int Robot::evaluerPlot(){
@@ -76,6 +83,7 @@ int Robot::evaluerPlot(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("evaluerPlot()");
 	return plot->getHauteur();
 }
 
@@ -86,6 +94,7 @@ void Robot::figer(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("figer()");
 }
 
 void Robot::repartir(){
@@ -95,6 +104,30 @@ void Robot::repartir(){
 	catch(Etat::ImpossibleAction e){
 		cout <<"ERREUR ACTION IMPOSSIBLE"<< endl;
 	}
+	notify("repartir()");
 }
 
+void Robot::attacher(Afficheur& afficheur){
+	afficheurs.push_back(afficheur);
+}
+
+void Robot::notify(string action){	
+	int hauteurPlot;
+	int poidsObjet;
+	if(plot==NULL){
+		hauteurPlot=0;
+	}
+	else{
+		hauteurPlot=plot->getHauteur();
+	}
+	if(obj==NULL){
+		poidsObjet=0;
+	}
+	else{
+		poidsObjet=obj->getPoids();
+	}
+	for(auto aff : afficheurs){
+		aff.get().afficher(action,etat->getName(),pos.getx(),pos.gety(),poidsObjet,hauteurPlot);
+	}
+}
 

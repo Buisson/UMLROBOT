@@ -1,5 +1,6 @@
 #include "AVideFacePlot.h"
 #include "EnChargeFacePlot.h"
+#include "AVide.h"
 AVideFacePlot* AVideFacePlot::_instance = NULL;
 
 Etat& AVideFacePlot::getInstance(){
@@ -14,12 +15,10 @@ Etat& AVideFacePlot::evaluerPlot(){
 }
 
 Etat& AVideFacePlot::tourner(){
-	//return AVide::getInstance;
-	return *this;
+	return AVide::getInstance();
 }
 
-string AVideFacePlot::getName()
-{
+string AVideFacePlot::getName(){
 	return "AVideFacePlot";
 }
 

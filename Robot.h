@@ -2,6 +2,8 @@
 #define _ROBOT_H_
 using namespace std;
 #include <string>
+#include <vector>
+#include <memory>
 #include "Etat.h"
 #include "Position.h"
 #include "Plot.h"
@@ -15,18 +17,19 @@ class Robot{
 		Plot* plot;
 		Objet* obj;
 		Etat* etat;
+		vector<reference_wrapper<Afficheur>> afficheurs;
 	public:
 		Robot(string d,Position po, Plot* pl, Objet* objet, Etat* e) : dir(d),pos(po),plot(pl),obj(objet),etat(e) {}
 		void avancer(int x, int y);
 		void tourner(string direction);
-		void saisir(Objet o);
+		void saisir(Objet& o);
 		void poser();
 		int peser();
-		void rencontrerPlot(Plot p);
+		void rencontrerPlot(Plot& p);
 		int evaluerPlot();
 		void figer();
 		void repartir();
-		void notify();
+		void notify(string action);
 		void attacher(Afficheur& afficheur);
 		void dettacher(Afficheur& afficheur);
 

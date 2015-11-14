@@ -2,21 +2,34 @@
 #include <cstdlib>
 using namespace std;
 #include "Robot.h"
-#include "Figer.h"
-#include "AVideFacePlot.h"
+#include "AVide.h"
+#include "TexteDisplay.h"
 
 int main(){
+	TexteDisplay txtAff = TexteDisplay();
 	cout << "##DEBUT TEST ROBOT UML##" << endl;
 	//Here the main function for test.
 	Position p = Position(0,0);
-	cout << p.getx() << endl;
-	Etat& f = AVideFacePlot::getInstance();
+	Etat& f = AVide::getInstance();
 	//string d,Position po, Plot pl, Objet objet, Etat e
-	Robot r = Robot("north",p,NULL,NULL,f);
-	cout << "evalPlot:" << endl;
-	r.evaluerPlot();//ne plante pas
-	cout << "fin eval plot" << endl;
-	cout << "repartir : " << endl;
-	r.repartir();//plante normalement
+	Robot r = Robot("S",p,NULL,NULL,&f);
+	r.attacher(txtAff);
+	r.avancer(2,4);
+	r.tourner("E");
+	Plot p1 = Plot(10);
+	r.rencontrerPlot(p1);
+	cout << "retour de la fonction : " << r.evaluerPlot() <<endl;
+	Objet o1 = Objet(50);	
+	r.saisir(o1);
+	cout << "retour de la fonction : " << r.peser() <<endl;
+	r.tourner("O");
+	r.avancer(2,3);
+	cout << "retour de la fonction : " << r.peser() <<endl;
+	Plot p2 = Plot(3);
+	r.rencontrerPlot(p2);
+	r.figer();
+	r.repartir();
+	cout << "retour de la fonction : " << r.evaluerPlot() <<endl;
+	r.poser();
 	return 0;
 }//

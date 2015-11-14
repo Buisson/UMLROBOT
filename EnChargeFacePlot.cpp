@@ -1,5 +1,7 @@
 #include "EnChargeFacePlot.h"
 #include "AVideFacePlot.h"
+#include "AVide.h"
+#include "EnCharge.h"
 EnChargeFacePlot* EnChargeFacePlot::_instance = NULL;
 
 Etat& EnChargeFacePlot::getInstance(){
@@ -13,14 +15,12 @@ Etat& EnChargeFacePlot::peser(){
 }
 
 Etat& EnChargeFacePlot::evaluerPlot(){
-	//return AVide::getInstance;
-	return *this;
+	return AVide::getInstance();
 }
 
 
 Etat& EnChargeFacePlot::tourner(){
-	//return EnCharge::getInstance;
-	return *this;
+	return EnCharge::getInstance();	
 }
 
 string EnChargeFacePlot::getName()
