@@ -17,7 +17,7 @@ class Robot{
 		Plot* plot;
 		Objet* obj;
 		Etat* etat;
-		vector<reference_wrapper<Afficheur>> afficheurs;
+		vector<Afficheur*> afficheurs;
 	public:
 		Robot(string d,Position po, Plot* pl, Objet* objet, Etat* e) : dir(d),pos(po),plot(pl),obj(objet),etat(e) {}
 		void avancer(int x, int y);
@@ -30,8 +30,8 @@ class Robot{
 		void figer();
 		void repartir();
 		void notify(string action);
-		void attacher(Afficheur& afficheur);
-		void dettacher(Afficheur& afficheur);
+		void attacher(Afficheur* afficheur);
+		void dettacher(Afficheur* afficheur);
 
 };
 #endif

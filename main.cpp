@@ -7,13 +7,14 @@ using namespace std;
 
 int main(){
 	TexteDisplay txtAff = TexteDisplay();
-	cout << "##DEBUT TEST ROBOT UML##" << endl;
+	cout << "##DEBUT SIMULATION ROBOT##" << endl;
 	//Here the main function for test.
 	Position p = Position(0,0);
 	Etat& f = AVide::getInstance();
-	//string d,Position po, Plot pl, Objet objet, Etat e
 	Robot r = Robot("S",p,NULL,NULL,&f);
-	r.attacher(txtAff);
+	r.attacher(&txtAff);
+	r.dettacher(&txtAff);
+	r.attacher(&txtAff);
 	r.avancer(2,4);
 	r.tourner("E");
 	Plot p1 = Plot(10);
@@ -22,7 +23,7 @@ int main(){
 	Objet o1 = Objet(50);	
 	r.saisir(o1);
 	cout << "retour de la fonction : " << r.peser() <<endl;
-	r.tourner("O");
+	r.tourner("W");
 	r.avancer(2,3);
 	cout << "retour de la fonction : " << r.peser() <<endl;
 	Plot p2 = Plot(3);
@@ -31,5 +32,7 @@ int main(){
 	r.repartir();
 	cout << "retour de la fonction : " << r.evaluerPlot() <<endl;
 	r.poser();
+	r.tourner("N");
+	cout << "##FIN SIMULATION ROBOT##" << endl;
 	return 0;
 }//

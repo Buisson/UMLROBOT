@@ -15,7 +15,7 @@ Etat& EnChargeFacePlot::peser(){
 }
 
 Etat& EnChargeFacePlot::evaluerPlot(){
-	return AVide::getInstance();
+	return *this;
 }
 
 

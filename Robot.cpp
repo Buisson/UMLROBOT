@@ -107,8 +107,16 @@ void Robot::repartir(){
 	notify("repartir()");
 }
 
-void Robot::attacher(Afficheur& afficheur){
+void Robot::attacher(Afficheur* afficheur){
 	afficheurs.push_back(afficheur);
+}
+
+void Robot::dettacher(Afficheur* afficheur){
+	for(auto ind = afficheurs.begin() ; ind!= afficheurs.end() && afficheurs.size() != 0 ; ind++){
+		if(*ind == afficheur){
+			afficheurs.erase(ind);
+		}
+	}
 }
 
 void Robot::notify(string action){	
@@ -127,7 +135,7 @@ void Robot::notify(string action){
 		poidsObjet=obj->getPoids();
 	}
 	for(auto aff : afficheurs){
-		aff.get().afficher(action,etat->getName(),pos.getx(),pos.gety(),poidsObjet,hauteurPlot);
+		aff->afficher(action,etat->getName(),pos.getx(),pos.gety(),poidsObjet,hauteurPlot);
 	}
 }
 
