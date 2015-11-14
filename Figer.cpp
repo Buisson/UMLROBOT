@@ -3,7 +3,6 @@
 
 Figer* Figer::_instance = NULL;
 
-
 Etat& Figer::getInstance() 
 {
 	if(_instance == NULL)
@@ -11,12 +10,13 @@ Etat& Figer::getInstance()
 	return *_instance;
 }
 
-Etat& Figer::figer(Etat dernierEtat)
-{
-	_dernierEtat = dernierEtat;
-	return *_instance;
-}
+
 Etat& Figer::repartir()
 {
-	return _dernierEtat;
+	return *_dernierEtat;
+}
+
+void Figer::setDernierEtat(Etat& dernierEtat)
+{
+	this->_dernierEtat = &dernierEtat;
 }

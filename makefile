@@ -1,9 +1,9 @@
 CC = g++
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c++11
 EXEC_NAME = main
 INCLUDES =
 LIBS =
-OBJ_FILES = main.o Etat.o Figer.o Position.o Plot.o Objet.o Robot.o
+OBJ_FILES = main.o Etat.o Figer.o Position.o Plot.o Objet.o Robot.o EnRoute.o
 
 all : $(EXEC_NAME)
 
